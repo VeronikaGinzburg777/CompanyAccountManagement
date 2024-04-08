@@ -40,7 +40,7 @@ class Admin(User):
 
     def get_access_level(self):
         return self.__access_level
-    
+
     def add_user(self, user_list, user):
         user_list.append(user)
 
@@ -60,6 +60,13 @@ user_list = [user1, user2]
 admin.add_user(user_list, admin)
 
 print("Список пользователей")
+
+for user in user_list:
+    print(f" ID: {user.get_user_id()} Имя: {user.get_user_name()} Уровень доступа: {user.get_access_level()}")
+
+admin.remove_user(user_list, "2")
+
+print("Обновленный список пользователей ")
 
 for user in user_list:
     print(f" ID: {user.get_user_id()} Имя: {user.get_user_name()} Уровень доступа: {user.get_access_level()}")
